@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link, Route } from 'react-router-dom';
+import ProfileForm from '../components/ProfileForm';
 
 class Profiles extends Component {
   constructor(props) {
@@ -16,10 +18,29 @@ class Profiles extends Component {
       }))
   }
 
+  addProfile = (profile) => {
+    this.setState({
+      profiles: this.state.profiles.concat(profile)
+    }, () => {
+      this.props.history.replace('/profiles')
+    })
+  }
+
   render() {
+    const renderProfiles = this.state.profiles.map(profile => {
+      return (
+        <div key={profile.id}>
+          {profile.name}
+        </div>
+      )
+    })
+
     return (
       <div>
         <h3>Check Profiles</h3>
+        <Link to="/profiles/new">New Profile</Link>
+        <Route path="/profiles/new" render={() => <ProfileForm addProfile={this.addProfile} />} />
+        {renderProfiles}
       </div>
     )
   }

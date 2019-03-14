@@ -31,7 +31,7 @@ class ProfileForm extends Component {
 
     fetch('http://localhost:3001/api/profiles ', request)
       .then(response => response.json())
-      .then(profile => console.log(profile))
+      .then(profile => this.props.addProfile(profile))
       .catch(error => console.log(error))
   }
 
