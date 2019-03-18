@@ -26,11 +26,34 @@ class Profiles extends Component {
     })
   }
 
+  deleteProfile = (profileId) => {
+    const request = {
+      method: 'DELETE'
+    }
+
+    fetch(`http://localhost:3001/api/profiles/${profileId}`, request)
+      .then(response => {
+        if (response.ok) {
+          const index = this.state.profiles.findIndex(profile => profile.id === profileId)
+          this.setState({
+            profiles: [
+              ...this.state.profiles.slice(0, index),
+              ...this.state.profiles.slice(index + 1)
+            ]
+          })
+        } else {
+          window.alert("Unable to delete profile")
+        }
+      })
+      .catch(error => console.log(error))
+  }
+
   render() {
     const renderProfiles = this.state.profiles.map(profile => {
       return (
         <div key={profile.id}>
           {profile.name}
+          <button onClick={() => this.deleteProfile(profile.id)}>Delete</button>
         </div>
       )
     })
