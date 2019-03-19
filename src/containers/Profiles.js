@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link, Route } from 'react-router-dom';
 import ProfileForm from '../components/ProfileForm';
+import EditProfileForm from '../components/EditProfileForm';
 
 class Profiles extends Component {
   constructor(props) {
@@ -49,11 +50,13 @@ class Profiles extends Component {
   }
 
   render() {
+    const { match } = this.props
     const renderProfiles = this.state.profiles.map(profile => {
       return (
         <div key={profile.id}>
           {profile.name}
           <button onClick={() => this.deleteProfile(profile.id)}>Delete</button>
+          <button><Link to={`${match.url}/${profile.id}/edit`}>Edit</Link></button>
         </div>
       )
     })
@@ -61,8 +64,9 @@ class Profiles extends Component {
     return (
       <div>
         <h3>Check Profiles</h3>
-        <Link to="/profiles/new">New Profile</Link>
-        <Route path="/profiles/new" render={() => <ProfileForm addProfile={this.addProfile} />} />
+        <Link to={`${match.url}/new`} >New Profile</Link>
+        <Route path={`${match.url}/new`} render={() => <ProfileForm addProfile={this.addProfile} />} />
+        <Route path={`${match.url}/:profileId/edit`} component={EditProfileForm} />
         {renderProfiles}
       </div>
     )
