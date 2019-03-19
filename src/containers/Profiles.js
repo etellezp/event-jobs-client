@@ -63,11 +63,15 @@ class Profiles extends Component {
 
     return (
       <div>
-        <h3>Check Profiles</h3>
-        <Link to={`${match.url}/new`} >New Profile</Link>
         <Route path={`${match.url}/new`} render={() => <ProfileForm addProfile={this.addProfile} />} />
         <Route path={`${match.url}/:profileId/edit`} component={EditProfileForm} />
-        {renderProfiles}
+        <Route exact path={match.url} render={() => (
+          <div>
+            <h3>Check Profiles</h3>
+            <Link to={`${match.url}/new`} >New Profile</Link>
+            {renderProfiles}
+          </div>
+        )} />
       </div>
     )
   }
