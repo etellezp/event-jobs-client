@@ -56,7 +56,14 @@ class Profiles extends Component {
         <div key={profile.id}>
           {profile.name}
           <button onClick={() => this.deleteProfile(profile.id)}>Delete</button>
-          <button><Link to={`${match.url}/${profile.id}/edit`}>Edit</Link></button>
+          <button>
+            <Link to={{
+              pathname: `${match.url}/${profile.id}/edit`,
+              state: { profile: profile }
+            }}>
+            Edit
+            </Link>
+          </button>
         </div>
       )
     })
