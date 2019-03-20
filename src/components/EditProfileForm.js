@@ -21,6 +21,38 @@ class EditProfileForm extends Component {
     })
   }
 
+  handleOnChange = (event) => {
+    const { name, value } = event.target
+    this.setState({
+      [name]: value
+    })
+  }
+
+  handleOnSubmit = (event) => {
+    event.preventDefault()
+
+    const profileData = Object.assign({}, this.state)
+    const request = {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        profile: profileData
+      })
+    }
+
+    fetch(`http://localhost:3001/api/profiles/${this.state.id}`, request)
+      .then(response => response.json())
+      .then(profile => {
+        this.props.history.replace({
+          pathname: '/profiles',
+          state: { profile }
+        })
+      })
+      .catch(error => console.log(error))
+  }
+
   render() {
     console.log(this.state)
     return (
@@ -39,7 +71,7 @@ class EditProfileForm extends Component {
           <input onChange={this.handleOnChange} type="text" name="location" value={this.state.location} />
           <label htmlFor="rate">Hourly Rate</label>
           <input onChange={this.handleOnChange} type="number" name="rate" value={this.state.rate} />
-          <button type="submit">Add Profile</button>
+          <button type="submit">Edit Profile</button>
         </form>
       </div>
     )
