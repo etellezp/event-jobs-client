@@ -27,26 +27,26 @@ class Profiles extends Component {
     })
   }
 
-  componentWillReceiveProps(next) {
-    const { profile } = next.history.location.state
-    if (profile.id) {
-      const existingProfile = this.state.profiles.find(p => p.id === profile.id)
-      if (existingProfile) {
-        const index = this.state.profiles.findIndex(p => p.id === existingProfile.id)
-        this.setState({
-          profiles: [
-            ...this.state.profiles.slice(0, index),
-            next.history.location.state.profile,
-            ...this.state.profiles.slice(index + 1)
-          ]
-        })
-      } else if (next.history.location.pathname === '/profiles') {
-        this.setState({
-          profiles: this.state.profiles.concat(profile)
-        })
-      }
-    }
-  }
+  // componentWillReceiveProps(next) {
+  //   const { profile } = next.history.location.state
+  //   if (profile.id) {
+  //     const existingProfile = this.state.profiles.find(p => p.id === profile.id)
+  //     if (existingProfile) {
+  //       const index = this.state.profiles.findIndex(p => p.id === existingProfile.id)
+  //       this.setState({
+  //         profiles: [
+  //           ...this.state.profiles.slice(0, index),
+  //           next.history.location.state.profile,
+  //           ...this.state.profiles.slice(index + 1)
+  //         ]
+  //       })
+  //     } else if (next.history.location.pathname === '/profiles') {
+  //       this.setState({
+  //         profiles: this.state.profiles.concat(profile)
+  //       })
+  //     }
+  //   }
+  // }
 
   deleteProfile = (profileId) => {
     const request = {
