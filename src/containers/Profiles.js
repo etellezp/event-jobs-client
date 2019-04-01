@@ -7,7 +7,7 @@ import Profile from '../components/Profile'
 class Profiles extends Component {
 
   componentDidMount() {
-      this.props.fetchProfiles()
+    this.props.fetchProfiles()
   }
 
   render() {
@@ -15,7 +15,7 @@ class Profiles extends Component {
 
     return (
       <div>
-        <h3>Profiles</h3>
+        <h2>Profiles</h2>
         { profiles.map(profile => <Profile key={profile.id} profile={profile} />) }
       </div>
     )
