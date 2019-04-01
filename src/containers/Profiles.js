@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { fetchProfiles } from '../actions/profileActions';
+import Profile from '../components/Profile'
 
 class Profiles extends Component {
 
@@ -10,11 +11,12 @@ class Profiles extends Component {
   }
 
   render() {
-    const { profiles } = this.props
+    const { profiles } = this.props.profiles
 
     return (
       <div>
         <h3>Profiles</h3>
+        { profiles.map(profile => <Profile key={profile.id} profile={profile} />) }
       </div>
     )
   }
@@ -22,7 +24,7 @@ class Profiles extends Component {
 
 const mapStateToProps = state => {
   return {
-    profiles: state.profiles.all
+    profiles: state.profiles
   }
 }
 
