@@ -19,3 +19,24 @@ export const fetchProfiles = () => {
       .catch(error => error)
   }
 }
+
+export const addProfile = profile => {
+  let data = {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ profile })
+  }
+
+  return dispatch => {
+    fetch(`${ apiUrl }/profiles`, data)
+      .then(response => response.json())
+      .then(profile => dispatch({
+        type: 'CREATE_PROFILE',
+        payload: profile
+      }))
+      .catch(error => error)
+  }
+}

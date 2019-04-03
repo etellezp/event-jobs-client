@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { addProfile } from '../actions/profileActions';
 
 class ProfileForm extends Component {
 
@@ -18,21 +21,7 @@ class ProfileForm extends Component {
   handleOnSubmit = (event) => {
     event.preventDefault()
 
-    const profileData = Object.assign({}, this.state)
-    const request = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        profile: profileData
-      })
-    }
-
-    fetch('http://localhost:3001/api/profiles ', request)
-      .then(response => response.json())
-      .then(profile => this.props.addProfile(profile))
-      .catch(error => console.log(error))
+    this.props.addProfile(this.state)
   }
 
   handleOnChange = (event) => {
@@ -66,4 +55,8 @@ class ProfileForm extends Component {
   }
 }
 
-export default ProfileForm;
+const mapDispatchToProps = dispatch => bindActionCreators({
+  addProfile
+}, dispatch)
+
+export default connect(null, mapDispatchToProps)(ProfileForm);
