@@ -3,6 +3,7 @@ import { Link, Route } from 'react-router-dom';
 import './App.css';
 import Home from '../components/Home';
 import Profiles from './Profiles';
+import ProfileForm from '../components/ProfileForm';
 
 class App extends Component {
   render() {
@@ -14,7 +15,8 @@ class App extends Component {
         </nav>
         <div>
           <Route exact path="/" component={Home} />
-          <Route path="/profiles" component={Profiles} />
+          <Route exact path="/profiles/new" component={ProfileForm} />
+          <Route exact path="/profiles" component={Profiles} />
         </div>
       </div>
     )

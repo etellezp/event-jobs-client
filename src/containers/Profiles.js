@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { fetchProfiles } from '../actions/profileActions';
+import { Link } from 'react-router-dom';
+
 import Profile from '../components/Profile'
 
 class Profiles extends Component {
@@ -16,7 +18,10 @@ class Profiles extends Component {
     return (
       <div>
         <h2>Profiles</h2>
+        <Link to="/profiles/new">Add Profile</Link>
+
         { profiles.map(profile => <Profile key={profile.id} profile={profile} />) }
+
       </div>
     )
   }
