@@ -22,6 +22,7 @@ class ProfileForm extends Component {
     event.preventDefault()
 
     this.props.addProfile(this.state)
+    this.props.history.push("/profiles")
   }
 
   handleOnChange = (event) => {
