@@ -10,6 +10,9 @@ function profilesReducer(state = initialState, action) {
     case 'CREATE_PROFILE':
       return { ...state, profiles: [...state.profiles, action.payload] }
 
+    case 'DELETE_PROFILE':
+      return { ...state, profiles: state.profiles.filter(profile => profile.id !== action.payload.id) }
+
     default:
       return state
   }
