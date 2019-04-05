@@ -2,6 +2,7 @@ import React from 'react';
 
 const Profile = (props) => {
   const { profile, deleteProfile } = props
+
   return (
     <div>
       {profile.image_url}
