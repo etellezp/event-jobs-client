@@ -40,3 +40,23 @@ export const addProfile = profile => {
       .catch(error => error)
   }
 }
+
+export const deleteProfile = id => {
+  let data = {
+    method: 'DELETE',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }
+  }
+
+  return dispatch => {
+    fetch(`${apiUrl}/profiles/${id}`, data)
+      .then(response => response.json())
+      .then(profile => dispatch({
+        type: 'DELETE_PROFILE',
+        payload: profile
+      }))
+      .catch(error => error)
+  }
+}
