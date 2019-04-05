@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Profile = (props) => {
-  const { profile } = props
+  const { profile, deleteProfile } = props
   return (
     <div>
       {profile.image_url}
@@ -9,6 +9,7 @@ const Profile = (props) => {
       <h4>{profile.skill}</h4>
       <p>{profile.location}</p>
       <p>${profile.rate}</p>
+      <button onClick={ () => deleteProfile(profile.id) }>X</button>
       <hr />
     </div>
   )

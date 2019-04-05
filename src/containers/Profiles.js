@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { fetchProfiles } from '../actions/profileActions';
+import { fetchProfiles, deleteProfile } from '../actions/profileActions';
 import { Link } from 'react-router-dom';
 
 import Profile from '../components/Profile'
@@ -20,7 +20,7 @@ class Profiles extends Component {
         <h2>Profiles</h2>
         <Link to="/profiles/new">Add Profile</Link>
 
-        { profiles.map(profile => <Profile key={profile.id} profile={profile} />) }
+        { profiles.map(profile => <Profile key={profile.id} profile={profile} deleteProfile={this.props.deleteProfile} />) }
 
       </div>
     )
@@ -34,7 +34,8 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  fetchProfiles
+  fetchProfiles,
+  deleteProfile
 }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profiles);
