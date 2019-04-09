@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import './App.css';
 import Home from '../components/Home';
+import NavBar from '../components/NavBar';
 import Profiles from './Profiles';
 import ProfileForm from '../components/ProfileForm';
 
@@ -9,10 +10,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <nav>
-          <Link to="/">Home</Link>
-          <Link to="/profiles">Profiles</Link>
-        </nav>
+        <NavBar />
         <div>
           <Route exact path="/" component={Home} />
           <Route exact path="/profiles/new" component={ProfileForm} />
