@@ -4,7 +4,7 @@ import { Button } from 'reactstrap';
 
 
 const Home = () => (
-  <div>
+  <div className="container-fluid">
     <h2>Hello World</h2>
     <Button outline color="primary"><Link to="/profiles">Check Profiles</Link></Button>
   </div>

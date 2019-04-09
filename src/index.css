@@ -1,0 +1,17 @@
+body {
+  background: rgb(50,50,93);
+  background: linear-gradient(180deg, rgba(50,50,93,1) 40%, rgba(82,95,127,1) 100%) fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  min-height: 100%;
+  padding: 0;
+}
+
+.particles {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  z-index: -1;
+}
