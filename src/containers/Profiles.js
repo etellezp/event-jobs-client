@@ -16,13 +16,16 @@ class Profiles extends Component {
     const { profiles } = this.props.profiles
 
     return (
-      <div>
+      <>
         <h2>Profiles</h2>
         <Link to="/profiles/new">Add Profile</Link>
 
-        { profiles.map(profile => <Profile key={profile.id} profile={profile} deleteProfile={this.props.deleteProfile} />) }
-
-      </div>
+        <div className="container">
+          <div className="row justify-content-center">
+            { profiles.map(profile => <Profile key={profile.id} profile={profile} deleteProfile={this.props.deleteProfile} />) }
+          </div>
+        </div>
+      </>
     )
   }
 }
