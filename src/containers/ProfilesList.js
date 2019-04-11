@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 import { fetchProfiles, deleteProfile } from '../actions/profileActions';
 import { Link } from 'react-router-dom';
 
-import Profile from '../components/Profile'
+import Profiles from '../components/Profiles'
 
-class Profiles extends Component {
+class ProfilesList extends Component {
 
   componentDidMount() {
     this.props.fetchProfiles()
@@ -22,7 +22,7 @@ class Profiles extends Component {
 
         <div className="container">
           <div className="row justify-content-center">
-            { profiles.map(profile => <Profile key={profile.id} profile={profile} deleteProfile={this.props.deleteProfile} />) }
+            { profiles.map(profile => <Profiles key={profile.id} profile={profile} deleteProfile={this.props.deleteProfile} />) }
           </div>
         </div>
       </>
@@ -41,4 +41,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   deleteProfile
 }, dispatch)
 
-export default connect(mapStateToProps, mapDispatchToProps)(Profiles);
+export default connect(mapStateToProps, mapDispatchToProps)(ProfilesList);

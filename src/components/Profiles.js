@@ -1,11 +1,12 @@
 import React from 'react';
+import image from './dice-1.png'
 
-const Profile = (props) => {
+const Profiles = (props) => {
   const { profile, deleteProfile } = props
 
   return (
     <div className="card col-3 mx-2 my-4">
-      <img src={profile.image_url} className="card-img-top" alt="..." />
+      {profile.image_url ? <img src={profile.image_url} className="card-img-top" alt="..." /> : <img src={image} className="card-img-top" alt="..." /> }
       <div className="card-body">
         <h3 className="card-title">{profile.name}</h3>
         <h5 className="card-text">{profile.skill}</h5>
@@ -18,4 +19,4 @@ const Profile = (props) => {
   )
 }
 
-export default Profile
+export default Profiles

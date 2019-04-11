@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 import './App.css';
 import Home from '../components/Home';
 import NavBar from '../components/NavBar';
-import Profiles from './Profiles';
+import ProfilesList from './ProfilesList';
 import ProfileForm from '../components/ProfileForm';
 import Particles from 'react-particles-js';
 
@@ -126,7 +126,7 @@ class App extends Component {
         <div>
           <Route exact path="/" component={Home} />
           <Route exact path="/profiles/new" component={ProfileForm} />
-          <Route exact path="/profiles" component={Profiles} />
+          <Route exact path="/profiles" component={ProfilesList} />
         </div>
 
         <Particles className="particles" params={particlesOptions}/>
