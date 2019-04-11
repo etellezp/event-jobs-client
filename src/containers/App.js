@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import './App.css';
 import Home from '../components/Home';
 import NavBar from '../components/NavBar';
 import ProfilesList from './ProfilesList';
 import ProfileForm from '../components/ProfileForm';
+import Profile from '../components/Profile';
 import Particles from 'react-particles-js';
 
 const particlesOptions = {
@@ -124,9 +125,12 @@ class App extends Component {
       <>
         <NavBar />
         <div>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/profiles/new" component={ProfileForm} />
-          <Route exact path="/profiles" component={ProfilesList} />
+        <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/profiles" component={ProfilesList} />
+            <Route path="/profiles/new" component={ProfileForm} />
+            <Route path="/profiles/:id" component={Profile} />
+          </Switch>
         </div>
 
         <Particles className="particles" params={particlesOptions}/>
