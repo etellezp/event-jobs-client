@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { getProfile } from '../actions/profileActions';
 
 class Profile extends Component {
@@ -9,10 +10,11 @@ class Profile extends Component {
   }
 
   render() {
-    const profile = this.props.profile 
+    const profile = this.props.profile
     return (
       <>
         <h2>{profile.name}</h2>
+        <p>{profile.about}</p>
       </>
     )
   }
@@ -25,6 +27,8 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = { getProfile }
+const mapDispatchToProps = dispatch => bindActionCreators({
+  getProfile
+}, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);
