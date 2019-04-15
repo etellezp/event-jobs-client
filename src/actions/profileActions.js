@@ -41,6 +41,26 @@ export const addProfile = profile => {
   }
 }
 
+export const getProfile = id => {
+  let data = {
+    method: 'GET',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }
+  }
+
+  return dispatch => {
+    fetch(`${apiUrl}/profiles/${id}`, data)
+      .then(response => response.json())
+      .then(profile => dispatch({
+        type: 'GET_PROFILE',
+        payload: profile
+      }))
+      .catch(error => error )
+  }
+}
+
 export const deleteProfile = id => {
   let data = {
     method: 'DELETE',

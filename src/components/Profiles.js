@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import image from './dice-1.png'
 
 const Profiles = (props) => {
@@ -13,7 +14,7 @@ const Profiles = (props) => {
         <p>Location: {profile.location}</p>
         <p>Rate: ${profile.rate} per hour</p>
         <button onClick={ () => deleteProfile(profile.id) }>X</button>
-        <button type="button" className="ml-2">View More</button>
+        <Link to={`/profiles/${profile.id}`}>View More</Link>
       </div>
     </div>
   )
