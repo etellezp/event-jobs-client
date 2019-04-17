@@ -44,3 +44,20 @@ a:hover {
 .bg-dark {
   background-color: rgb(50,50,93)!important;
 }
+
+.cards {
+  background: rgb(50,50,93);
+  border: 2px solid #fff;
+}
+
+hr {
+  background-color: #000;
+  width: 25%;
+}
+
+.circular-img {
+  border: 3px solid #000;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+}

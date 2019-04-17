@@ -12,10 +12,13 @@ class Profile extends Component {
   render() {
     const profile = this.props.profile
     return (
-      <>
-        <h2>{profile.name}</h2>
-        <p>{profile.about}</p>
-      </>
+      <div className="container">
+        <div className="jumbotron">
+          <h1 className="display-4 text-center">{profile.name}</h1>
+          <p className="lead">{profile.about}</p>
+        </div>
+      </div>
+
     )
   }
 

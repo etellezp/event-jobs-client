@@ -17,8 +17,10 @@ class ProfilesList extends Component {
 
     return (
       <>
-        <h2>Profiles</h2>
-        <Link to="/profiles/new">Add Profile</Link>
+        <h1 className="text-white text-center my-5">PROFILES</h1>
+        <div className="row justify-content-center my-2">
+          <Link className="text-center" to="/profiles/new">Add Profile</Link>
+        </div>
 
         <div className="container">
           <div className="row justify-content-center">
