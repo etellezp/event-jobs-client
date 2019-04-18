@@ -14,7 +14,7 @@ class Profile extends Component {
     return (
       <div className="container">
         <div className="jumbotron">
-          <button className="btn btn-danger" type="button" onClick={() => this.props.deleteProfile(profile.id)} >
+          <button className="btn btn-danger" type="button" onClick={() => this.deleteProfile(profile.id)} >
             Delete
           </button>
           <h1 className="display-4 text-center mb-5">{profile.name}</h1>
