@@ -14,8 +14,10 @@ class Profile extends Component {
     return (
       <div className="container">
         <div className="jumbotron">
-          <h1 className="display-4 text-center">{profile.name}</h1>
-          <p className="lead">{profile.about}</p>
+          <h1 className="display-4 text-center mb-5">{profile.name}</h1>
+          <hr />
+          <p className="lead text-center">{profile.about}</p>
+          <hr />
         </div>
       </div>
 

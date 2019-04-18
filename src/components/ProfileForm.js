@@ -37,7 +37,7 @@ class ProfileForm extends Component {
       <div className="container mt-5">
         <div className="row justify-content-center">
           <div className="card card-form">
-            <h3 className="card-title text-white text-center display-4">Add a Profile</h3>
+            <h3 className="card-title text-white text-center display-4 mt-3">Add a Profile</h3>
             <div className="card-body">
               <form className="form" onSubmit={this.handleOnSubmit}>
                 <input placeholder="Full Name" className="form-control mb-3" onChange={this.handleOnChange} type="text" name="name" />
