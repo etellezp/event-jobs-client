@@ -61,3 +61,19 @@ hr {
   height: 150px;
   width: 150px;
 }
+
+.card-form {
+  background: #1f2251;
+  width: 75%;
+}
+
+.form-control {
+  background-color: #1f2251;
+  border: 1px solid #cad1d7;
+  border-color: #2b3553;
+}
+
+.form-control:focus {
+  background-color: #1f2251;
+  border-color: #1d8cf8;
+}

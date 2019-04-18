@@ -34,23 +34,23 @@ class ProfileForm extends Component {
 
   render() {
     return (
-      <div>
-        <h3>Add a Profile</h3>
-        <form onSubmit={this.handleOnSubmit}>
-          <label htmlFor="name">Name</label>
-          <input onChange={this.handleOnChange} type="text" name="name" />
-          <label htmlFor="image_url">Image</label>
-          <input onChange={this.handleOnChange} type="text" name="image_url" />
-          <label htmlFor="about">About Me</label>
-          <textarea onChange={this.handleOnChange} name="about"></textarea>
-          <label htmlFor="skill">Skill</label>
-          <input onChange={this.handleOnChange} type="text" name="skill" />
-          <label htmlFor="location">Location</label>
-          <input onChange={this.handleOnChange} type="text" name="location" />
-          <label htmlFor="rate">Hourly Rate</label>
-          <input onChange={this.handleOnChange} type="number" name="rate" />
-          <button type="submit">Add Profile</button>
-        </form>
+      <div className="container mt-5">
+        <div className="row justify-content-center">
+          <div className="card card-form">
+            <h3 className="card-title text-white text-center display-4">Add a Profile</h3>
+            <div className="card-body">
+              <form className="form" onSubmit={this.handleOnSubmit}>
+                <input placeholder="Full Name" className="form-control mb-3" onChange={this.handleOnChange} type="text" name="name" />
+                <input placeholder="Image Url" className="form-control mb-3" onChange={this.handleOnChange} type="text" name="image_url" />
+                <textarea placeholder="About Me" className="form-control mb-3" onChange={this.handleOnChange} name="about"></textarea>
+                <input placeholder="Skill" className="form-control mb-3" onChange={this.handleOnChange} type="text" name="skill" />
+                <input placeholder="Location" className="form-control mb-3" onChange={this.handleOnChange} type="text" name="location" />
+                <input placeholder="Hourly Rate" className="form-control mb-3" onChange={this.handleOnChange} type="number" name="rate" />
+                <button className="btn btn-primary btn-md" type="submit">Add Profile</button>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
