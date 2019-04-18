@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { getProfile } from '../actions/profileActions';
+import { getProfile, deleteProfile } from '../actions/profileActions';
 
 class Profile extends Component {
 
@@ -14,6 +14,9 @@ class Profile extends Component {
     return (
       <div className="container">
         <div className="jumbotron">
+          <button className="btn btn-danger" type="button" onClick={() => this.props.deleteProfile(profile.id)} >
+            Delete
+          </button>
           <h1 className="display-4 text-center mb-5">{profile.name}</h1>
           <hr />
           <p className="lead text-center">{profile.about}</p>
@@ -33,7 +36,8 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  getProfile
+  getProfile,
+  deleteProfile
 }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);
