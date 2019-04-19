@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { getProfile, deleteProfile } from '../actions/profileActions';
 
@@ -14,6 +15,9 @@ class Profile extends Component {
     return (
       <div className="container">
         <div className="jumbotron">
+          <Link to={{ pathname: `/profiles/${profile.id}/edit`, state: { profile: profile } }} className="btn btn-info">
+            Edit Profile
+          </Link>
           <button className="btn btn-danger" type="button" onClick={() => this.props.deleteProfile(profile.id)} >
             Delete
           </button>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class EditProfileForm extends Component {
+class EditProfile extends Component {
 
   constructor(props) {
     super(props)
@@ -78,4 +78,4 @@ class EditProfileForm extends Component {
   }
 }
 
-export default EditProfileForm;
+export default EditProfile;

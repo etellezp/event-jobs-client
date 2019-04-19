@@ -7,6 +7,7 @@ import ProfilesList from './ProfilesList';
 import ProfileForm from '../components/ProfileForm';
 import Profile from '../components/Profile';
 import Particles from 'react-particles-js';
+import EditProfile from '../components/EditProfile';
 
 const particlesOptions = {
   "particles": {
@@ -129,7 +130,8 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/profiles" component={ProfilesList} />
             <Route path="/profiles/new" component={ProfileForm} />
-            <Route path="/profiles/:id" component={Profile} />
+            <Route exact path="/profiles/:id" component={Profile} />
+            <Route path="/profiles/:id/edit" component={EditProfile} />
           </Switch>
         </div>
 
