@@ -13,6 +13,23 @@ function profilesReducer(state = initialState, action) {
     case 'DELETE_PROFILE':
       return { ...state, profiles: state.profiles.filter(profile => profile.id !== action.payload.id) }
 
+    case 'REPLACE_PROFILE':
+      return state.map((profile) => {
+        if (profile.id === action.payload.id) {
+          return {
+            ...profile,
+            name: action.payload.name,
+            image_url: action.payload.image_url,
+            about: action.payload.about,
+            skill: action.payload.skill,
+            location: action.payload.location,
+            rate: action.payload.rate
+          }
+        } else {
+          return profile
+        }
+      })
+
     default:
       return state
   }

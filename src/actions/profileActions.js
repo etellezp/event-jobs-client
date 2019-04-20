@@ -80,3 +80,25 @@ export const deleteProfile = id => {
       .catch(error => error)
   }
 }
+
+export const updateProfile = profile => {
+  let data = {
+    method: 'PUT',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ profile })
+  }
+
+  return dispatch => {
+    fetch(`${apiUrl}/profiles/${profile.id}`, data)
+      .then(response => response.json())
+      .then(response => {
+        const data = response.data
+        dispatch({type: 'UPDATE_PROFILE', payload: {id: data.id, name: data.name, image_url: data.image_url, about: data.about, skill: data.skill, location: data.location, rate: data.rate}})
+        dispatch({type: 'REPLACE_PROFILE', payload: {id: data.id, name: data.name, image_url: data.image_url, about: data.about, skill: data.skill, location: data.location, rate: data.rate}})
+      })
+      .catch(error => error )
+  }
+}
