@@ -4,10 +4,10 @@ import './App.css';
 import Home from '../components/Home';
 import NavBar from '../components/NavBar';
 import ProfilesList from './ProfilesList';
-import ProfileForm from '../components/ProfileForm';
-import Profile from '../components/Profile';
+import ProfileForm from './ProfileForm';
+import Profile from './Profile';
 import Particles from 'react-particles-js';
-import EditProfile from '../components/EditProfile';
+import EditProfile from './EditProfile';
 
 const particlesOptions = {
   "particles": {

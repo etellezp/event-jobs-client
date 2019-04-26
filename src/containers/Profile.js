@@ -35,7 +35,8 @@ class Profile extends Component {
 
 const mapStateToProps = state => {
   return {
-    profile: state.profile
+    profile: state.profile,
+    comments: state.comments
   }
 }
 
