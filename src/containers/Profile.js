@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { getProfile, deleteProfile } from '../actions/profileActions';
+import Comments from '../components/Comments'
 
 class Profile extends Component {
 
@@ -12,6 +13,7 @@ class Profile extends Component {
 
   render() {
     const profile = this.props.profile
+
     return (
       <div className="container">
         <div className="jumbotron">
@@ -25,6 +27,7 @@ class Profile extends Component {
           <hr />
           <p className="lead text-center">{profile.about}</p>
           <hr />
+          <Comments comments={profile.comments} />
         </div>
       </div>
 
