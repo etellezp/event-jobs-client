@@ -10,24 +10,27 @@ class CommentForm extends Component {
 
     this.state = {
       review: '',
-      rating: ''
+      rating: '',
+      profileId: ''
     }
   }
 
   handleOnSubmit = event => {
     event.preventDefault()
-
+    console.log(this.state)
     this.props.addComment(this.state)
   }
 
   handleOnChange = event => {
     const { name, value } = event.target
     this.setState({
-      [name]: value
+      [name]: value,
+      profileId: parseInt(this.props.match.params.id)
     })
   }
 
   render() {
+    console.log(this.props.match.params)
     return(
       <div className="container mt-5">
         <div className="row justify-content-center">
