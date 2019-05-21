@@ -34,15 +34,6 @@ class NavBar extends React.Component {
               <NavItem>
                 <NavLink className="text-white" href="/profiles">Profiles</NavLink>
               </NavItem>
-              <NavItem>
-                <NavLink className="text-white" href="#">Login</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink className="text-white" href="#">Register</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink className="text-white" href="#">LogOut</NavLink>
-              </NavItem>
             </Nav>
           </Collapse>
         </Navbar>

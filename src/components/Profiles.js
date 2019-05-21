@@ -17,7 +17,12 @@ const Profiles = (props) => {
         <p>Rate: ${profile.rate} per hour</p>
         <hr />
         <div className="row justify-content-end">
-          <Link className="btn btn-primary" to={`/profiles/${profile.id}`}>View More</Link>
+          <Link
+            className="btn btn-primary"
+            to={`/profiles/${profile.id}`}
+            >
+            View More
+          </Link>
         </div>
       </div>
     </div>

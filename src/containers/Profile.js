@@ -17,16 +17,22 @@ class Profile extends Component {
     return (
       <div className="container">
         <div className="jumbotron">
-          <Link to={{ pathname: `/profiles/${profile.id}/edit`, state: { profile: profile } }} className="btn btn-info">
+          <Link
+            to={{ pathname: `/profiles/${profile.id}/edit`, state: { profile: profile } }}
+            className="btn btn-info">
             Edit Profile
           </Link>
-          <button className="btn btn-danger" type="button" onClick={() => this.props.deleteProfile(profile.id)} >
+          <button
+            className="btn btn-danger"
+            type="button"
+            onClick={() => this.props.deleteProfile(profile.id)} >
             Delete
           </button>
           <h1 className="display-4 text-center mb-5">{profile.name}</h1>
           <hr />
           <p className="lead text-center">{profile.about}</p>
           <hr />
+          <h4>Comments</h4>
           <Comments comments={profile.comments} />
         </div>
       </div>

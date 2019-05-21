@@ -10,7 +10,6 @@ const Home = () => (
           Welcome to Uncublicle, the platform where you can find great talent for your next big event.
         </h4>
         <button type="button" className="btn btn-primary p-2 mr-3"><Link to="/profiles">Check Profiles</Link></button>
-        <button type="button" className="btn btn-primary p-2 ml-3">I want to Work</button>
       </div>
     </div>
   </div>

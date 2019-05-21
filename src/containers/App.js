@@ -126,7 +126,7 @@ class App extends Component {
       <>
         <NavBar />
         <div>
-        <Switch>
+          <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/profiles" component={ProfilesList} />
             <Route path="/profiles/new" component={ProfileForm} />

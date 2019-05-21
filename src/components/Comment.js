@@ -3,7 +3,9 @@ import React from 'react';
 const Comment = (props) => {
   return (
     <div>
-      {props.comment.review}
+      <ul>
+        <li>{props.comment.review} - {props.comment.rating}/5</li>
+      </ul>
     </div>
   )
 }

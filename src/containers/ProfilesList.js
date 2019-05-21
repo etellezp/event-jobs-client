@@ -3,7 +3,6 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { fetchProfiles } from '../actions/profileActions';
 import { Link } from 'react-router-dom';
-
 import Profiles from '../components/Profiles'
 
 class ProfilesList extends Component {
