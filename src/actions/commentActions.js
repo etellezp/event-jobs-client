@@ -21,3 +21,24 @@ export const fetchComments = profile => {
       .catch(error => error)
   }
 }
+
+export const addComment = profile => {
+  let data = {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ profile })
+  }
+
+  return dispatch => {
+    fetch(`${ apiUrl }/profiles/${profile.id}/comments`, data)
+      .then(response => response.json())
+      .then(comment => dispatch({
+        type: 'CREATE_COMMENT',
+        payload: comment
+      }))
+      .catch(error => error)
+  }
+}

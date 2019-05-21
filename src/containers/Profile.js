@@ -33,6 +33,12 @@ class Profile extends Component {
           <p className="lead text-center">{profile.about}</p>
           <hr />
           <h4>Comments</h4>
+          <Link
+            className="btn btn-primary"
+            to={`/profiles/${profile.id}/comments/new`}
+            >
+            Add a comment
+          </Link>
           <Comments comments={profile.comments} />
         </div>
       </div>
