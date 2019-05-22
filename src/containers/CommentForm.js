@@ -16,9 +16,8 @@ class CommentForm extends Component {
   }
 
   handleOnSubmit = event => {
-    event.preventDefault()
-    console.log(this.state)
     this.props.addComment(this.state)
+    this.props.history.push(`/profiles/${this.state.profileId}`)
   }
 
   handleOnChange = event => {

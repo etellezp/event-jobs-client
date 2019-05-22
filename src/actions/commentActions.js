@@ -31,7 +31,6 @@ export const addComment = (comment) => {
     },
     body: JSON.stringify({ comment })
   }
-  console.log(comment)
   return dispatch => {
     fetch(`${ apiUrl }/profiles/${comment.profileId}/comments`, data)
       .then(response => response.json())
