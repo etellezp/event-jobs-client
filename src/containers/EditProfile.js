@@ -25,6 +25,7 @@ class EditProfile extends Component {
     const profile = { id: id, name: name, image_url: image_url, about: about, skill: skill, location: location, rate: rate }
 
     this.props.updateProfile(profile)
+    this.props.history.push(`/profiles/${this.props.profile.id}`)
   }
 
   handleCancel = () => {

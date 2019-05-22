@@ -17,7 +17,7 @@ class CommentForm extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault()
-    
+
     this.props.addComment(this.state)
     this.props.history.push(`/profiles/${this.state.profileId}`)
   }
@@ -31,7 +31,6 @@ class CommentForm extends Component {
   }
 
   render() {
-    console.log(this.props.match.params)
     return(
       <div className="container mt-5">
         <div className="row justify-content-center">
