@@ -39,14 +39,64 @@ class EditProfile extends Component {
             <h3 className="card-title text-white text-center display-4 mt-3">Edit {this.props.profile.name} profile</h3>
             <div className="card-body">
               <form className="form" onSubmit={this.handleOnSubmit}>
-                <input placeholder="Full Name" className="form-control mb-3" onChange={this.handleOnChange} type="text" name="name" defaultValue={this.props.profile.name} />
-                <input placeholder="Image Url" className="form-control mb-3" onChange={this.handleOnChange} type="text" name="image_url" defaultValue={this.props.profile.image_url} />
-                <textarea placeholder="About Me" className="form-control mb-3" onChange={this.handleOnChange} name="about" defaultValue={this.props.profile.about}></textarea>
-                <input placeholder="Skill" className="form-control mb-3" onChange={this.handleOnChange} type="text" name="skill" defaultValue={this.props.profile.skill} />
-                <input placeholder="Location" className="form-control mb-3" onChange={this.handleOnChange} type="text" name="location" defaultValue={this.props.profile.location} />
-                <input placeholder="Hourly Rate" className="form-control mb-3" onChange={this.handleOnChange} type="number" name="rate" defaultValue={this.props.profile.rate} />
-                <button className="btn btn-primary btn-md" type="submit">Update Profile</button>
-                <button className="btn btn-secondary btn-md" type="button" onClick={this.handleCancel}>Cancel</button>
+                <input
+                  placeholder="Full Name"
+                  className="form-control mb-3"
+                  onChange={this.handleOnChange}
+                  type="text"
+                  name="name"
+                  defaultValue={this.props.profile.name}
+                />
+                <input
+                  placeholder="Image Url"
+                  className="form-control mb-3"
+                  onChange={this.handleOnChange}
+                  type="text"
+                  name="image_url"
+                  defaultValue={this.props.profile.image_url}
+                />
+                <textarea
+                  placeholder="About Me"
+                  className="form-control mb-3"
+                  onChange={this.handleOnChange}
+                  name="about"
+                  defaultValue={this.props.profile.about}>
+                </textarea>
+                <input
+                  placeholder="Skill"
+                  className="form-control mb-3"
+                  onChange={this.handleOnChange}
+                  type="text"
+                  name="skill"
+                  defaultValue={this.props.profile.skill}
+                />
+                <input
+                  placeholder="Location"
+                  className="form-control mb-3"
+                  onChange={this.handleOnChange}
+                  type="text"
+                  name="location"
+                  defaultValue={this.props.profile.location}
+                />
+                <input
+                  placeholder="Hourly Rate"
+                  className="form-control mb-3"
+                  onChange={this.handleOnChange}
+                  type="number"
+                  name="rate"
+                  defaultValue={this.props.profile.rate}
+                />
+                <button
+                  className="btn btn-primary btn-sm mr-1"
+                  type="submit">
+                  Update Profile
+                </button>
+                <button
+                  className="btn btn-secondary btn-sm ml-1"
+                  type="button"
+                  onClick={this.handleCancel}>
+                  Cancel
+                </button>
               </form>
             </div>
           </div>

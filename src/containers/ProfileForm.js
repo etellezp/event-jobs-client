@@ -32,6 +32,10 @@ class ProfileForm extends Component {
     })
   }
 
+  handleCancel = () => {
+    this.props.history.push(`/profiles/`)
+  }
+
   render() {
     return (
       <div className="container mt-5">
@@ -82,9 +86,15 @@ class ProfileForm extends Component {
                   name="rate"
                 />
                 <button
-                  className="btn btn-primary btn-md"
+                  className="btn btn-primary btn-sm mr-1"
                   type="submit">
                   Add Profile
+                </button>
+                <button
+                  className="btn btn-secondary btn-sm ml-1"
+                  type="button"
+                  onClick={this.handleCancel}>
+                  Cancel
                 </button>
               </form>
             </div>

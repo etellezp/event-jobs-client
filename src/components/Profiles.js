@@ -20,7 +20,7 @@ const Profiles = (props) => {
           <Link
             className="btn btn-primary"
             to={`/profiles/${profile.id}`}
-            >
+          >
             View More
           </Link>
         </div>

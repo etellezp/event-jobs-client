@@ -18,7 +18,7 @@ class ProfilesList extends Component {
       <>
         <h1 className="text-white text-center my-5">PROFILES</h1>
         <div className="row justify-content-center my-2">
-          <Link className="text-center" to="/profiles/new">Add Profile</Link>
+          <Link className="text-center btn btn-primary btn-sm" to="/profiles/new">Add Profile</Link>
         </div>
 
         <div className="container">

@@ -22,30 +22,38 @@ class Profile extends Component {
             className="btn btn-info">
             Edit Profile
           </Link>
+
           <button
-            className="btn btn-danger"
+            className="btn btn-danger mx-1"
             type="button"
             onClick={() => this.props.deleteProfile(profile.id)} >
             Delete
           </button>
+
+          <Link
+            to={{ pathname: `/profiles`}}
+            className="btn btn-primary">
+            Back
+          </Link>
+
           <h1 className="display-4 text-center mb-5">{profile.name}</h1>
           <hr />
           <p className="lead text-center">{profile.about}</p>
           <hr />
           <h4>Comments</h4>
+
           <Link
-            className="btn btn-primary"
+            className="btn btn-primary btn-sm mb-3"
             to={`/profiles/${profile.id}/comments/new`}
             >
             Add a comment
           </Link>
+
           <Comments comments={profile.comments} />
         </div>
       </div>
-
     )
   }
-
 }
 
 const mapStateToProps = state => {
