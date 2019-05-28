@@ -26,7 +26,7 @@ class Profile extends Component {
           <button
             className="btn btn-danger mx-1"
             type="button"
-            onClick={() => this.props.deleteProfile(profile.id)} >
+            onClick={() => {this.props.deleteProfile(profile.id); this.props.history.push(`/profiles`)}} >
             Delete
           </button>
 

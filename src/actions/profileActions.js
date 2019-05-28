@@ -21,6 +21,7 @@ export const fetchProfiles = () => {
 }
 
 export const addProfile = profile => {
+  console.log("C");
   let data = {
     method: 'POST',
     headers: {
@@ -33,12 +34,15 @@ export const addProfile = profile => {
   return dispatch => {
     fetch(`${ apiUrl }/profiles`, data)
       .then(response => response.json())
-      .then(profile => dispatch({
+      .then(profile => {
+        console.log("D");
+        dispatch({
         type: 'CREATE_PROFILE',
         payload: profile
-      }))
+      })})
       .catch(error => error)
   }
+  console.log("E");
 }
 
 export const getProfile = id => {

@@ -20,8 +20,9 @@ class ProfileForm extends Component {
 
   handleOnSubmit = (event) => {
     event.preventDefault()
-
+    console.log("A");
     this.props.addProfile(this.state)
+    console.log("B");
     this.props.history.push("/profiles")
   }
 
